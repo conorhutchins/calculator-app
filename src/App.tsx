@@ -1,8 +1,9 @@
 import React from 'react'
+import './styles/app.css'
 import Home from './views/Home'
 
 const App: React.FC = () => {
-  
+
 return <Home />
 }
 

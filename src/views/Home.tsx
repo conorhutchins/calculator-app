@@ -1,10 +1,11 @@
 import React from "react";
 import Calculator from "../components/Calculator";
+import styles from "../styles/home.module.css";
 
 const Home: React.FC = () => {
   return (
-    <div>
-      <h1 style={{ textAlign: "center" }}>Calculator App</h1>
+    <div className={styles.home}>
+      <h1 className={styles.title}>Calculator App</h1>
       <Calculator />
     </div>
   );
