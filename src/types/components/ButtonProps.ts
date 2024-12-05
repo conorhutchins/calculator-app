@@ -1,5 +1,5 @@
+import { CalculatorButton } from "./CalculatorButton";
 export interface ButtonProps {
-    value: string;
-    onClick: (value: string) => void;
-  }
-  
+  button: CalculatorButton;
+  onClick: (button: CalculatorButton) => void;
+}

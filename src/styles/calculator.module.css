@@ -11,3 +11,14 @@
     gap: 10px;
     box-sizing: border-box;
 }
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }

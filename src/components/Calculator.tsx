@@ -1,25 +1,32 @@
 import React, { useState } from "react";
 import Button from "./Button";
-import Display from "./Display";
 import buttonValues from "../data/buttonValues";
+import Display from "./Display";
+import { CalculatorButton } from "../types";
 import styles from "../styles/calculator.module.css";
+import { evaluate } from "mathjs";
 
 const Calculator: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const [result, setResult] = useState<string | number>("");
 
-  const handleClick = (value: string): void => {
-    if (value === "=") {
-      try {
-        setResult(eval(input)); // eslint-disable-line no-eval
-      } catch {
-        setResult("Error");
+  const handleClick = (button: CalculatorButton): void => {
+    const { label, value, type } = button;
+
+    if (type === "action") {
+      if (label === "Clear") {
+        setInput("");
+        setResult("");
+      } else if (label === "=") {
+        try {
+          const evalResult = evaluate(input);
+          setResult(evalResult);
+        } catch {
+          setResult("Error");
+        }
       }
-    } else if (value === "C") {
-      setInput("");
-      setResult("");
     } else {
-      setInput((prev) => prev + value);
+      setInput((prev) => prev + (value || label));
     }
   };
 
@@ -27,8 +34,16 @@ const Calculator: React.FC = () => {
     <div className={styles.calculator}>
       <Display input={input} result={result} />
       <div className={styles.buttons}>
-        {buttonValues.map((btn) => (
-          <Button key={btn} value={btn} onClick={handleClick} />
+        {buttonValues.map((row, rowIndex) => (
+          <div key={rowIndex} className={styles.row}>
+            {row.map((button) => (
+              <Button
+                key={button.label}
+                button={button}
+                onClick={handleClick}
+              />
+            ))}
+          </div>
         ))}
       </div>
     </div>
