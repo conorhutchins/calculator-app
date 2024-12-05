@@ -1,0 +1,31 @@
+.button {
+    font-size: 19px;
+    font-weight: bold;
+    color: #538316;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.button:hover {
+    background-color: #538316;
+    color: white;
+    transform: scale(1.05);
+}
+.button:active {
+    background-color: #004b1e;
+    transform: scale(0.95);
+}
+
+@media (max-width: var(--breakpoint-tablet)) {
+    .button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+    .button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
