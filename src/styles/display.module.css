@@ -1,0 +1,43 @@
+.display { 
+    background-color: #fff;
+    height: 6rem;
+    border: 1px solid #538316;
+    border-radius: 8px;
+    color: #538316;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: right;
+    overflow: hidden;
+}
+
+.input { 
+    font-size: 2rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.result {
+    color: #004b1e;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media(max-width: var(--breakpoint-tablet)) {
+    .display {
+        font-size: 0.75rem;
+    }
+    .input {
+        font-size: 1.5rem;
+    }
+}
+    @media(max-width: var(--breakpoint-mobile)) {
+        .display {
+            font-size: 0.5rem;
+        }
+        .input {
+            font-size: 1rem;
+        }
+    }
