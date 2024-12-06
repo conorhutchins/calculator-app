@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Button from "./Button";
-import buttonValues from "../data/buttonValues";
-import Display from "./Display";
-import { CalculatorButton } from "../types";
-import styles from "../styles/calculator.module.css";
+import Button from "../Button/Button";
+import buttonValues from "../../data/buttonValues";
+import Display from "../Display/Display";
+import { CalculatorButton } from "../../types";
+import styles from "./Calculator.module.css";
 import { evaluate } from "mathjs";
 
 const Calculator: React.FC = () => {
@@ -12,18 +12,29 @@ const Calculator: React.FC = () => {
 
   const handleClick = (button: CalculatorButton): void => {
     const { label, value, type } = button;
-
+  
     if (type === "action") {
-      if (label === "Clear") {
+      if (label === "C") {
         setInput("");
         setResult("");
       } else if (label === "=") {
         try {
           const evalResult = evaluate(input);
-          setResult(evalResult);
+          if (evalResult === Infinity || evalResult === -Infinity || isNaN(evalResult)) {
+            setResult("Undefined");
+          } else {
+            setResult(evalResult);
+          }
         } catch {
-          setResult("Error");
+          setResult("Undefined");
         }
+      } else if (label === "+/-") {
+        setInput((prev) => {
+          if (!prev) {
+            return "-";
+          }
+          return prev.startsWith("-") ? prev.slice(1) : "-" + prev;
+        });
       }
     } else {
       setInput((prev) => prev + (value || label));

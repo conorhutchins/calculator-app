@@ -1,6 +1,6 @@
 import React from "react";
-import Calculator from "../components/Calculator";
-import styles from "../styles/home.module.css";
+import Calculator from "../../components/Calculator/Calculator";
+import styles from "./Home.module.css";
 
 const Home: React.FC = () => {
   return (
