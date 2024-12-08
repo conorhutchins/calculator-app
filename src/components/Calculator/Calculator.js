@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import buttonValues from "../../data/buttonValues";
 import Display from "../Display/Display";
 import styles from "./Calculator.module.css";
-import { calculateResult, toggleSign } from "../../utils/calculatorUtils";
+import { calculateResult, toggleSign } from "../../utils/calculatorUtils/calculatorUtils";
 const Calculator = () => {
     const [input, setInput] = useState("");
     const [result, setResult] = useState("");

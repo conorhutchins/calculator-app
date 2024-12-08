@@ -4,7 +4,7 @@ import buttonValues from "../../data/buttonValues";
 import Display from "../Display/Display";
 import { CalculatorButton } from "../../types";
 import styles from "./Calculator.module.css";
-import { calculateResult, toggleSign } from "../../utils/calculatorUtils";
+import { calculateResult, toggleSign } from "../../utils/calculatorUtils/calculatorUtils";
 
 const Calculator: React.FC = () => {
   const [input, setInput] = useState<string>("");
