@@ -43,7 +43,7 @@ Create a simple calculator app to perform basic mathematical operations with a u
    ```bash
    npm run dev
    ```
-    - Open your browser and go to [http://localhost:5174](http://localhost:5174) (or the port shown in the terminal).
+    - Open your browser and go to [http://localhost:5173](http://localhost:5173) (or the port shown in the terminal).
 
 ### Testing the Application
 **Run the tests**:
