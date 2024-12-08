@@ -54,4 +54,4 @@ Create a simple calculator app to perform basic mathematical operations with a u
 Link to [GitHub Repository](https://github.com/conorhutchins/calculator-app).
 
 ## Deployment Link
-Link to [Hosted Calculator App](Deployment Pending).
+Link to [Hosted Calculator App](https://conorhutchins.github.io/calculator-app/).
